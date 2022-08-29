@@ -48,7 +48,7 @@ const customerGroups = computed(() => {
           commandKey: "Control+m",
           commandAction: () => {
             changeTheme();
-            var element: HTMLInputElement = document.getElementById('theme-checkbox')!;
+            var element = document.getElementById('theme-checkbox') as HTMLInputElement;
             element.checked = !element.checked;
           },
         },
