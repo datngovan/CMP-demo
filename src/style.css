@@ -32,12 +32,6 @@ h1 {
   gap: 40px;
   padding: 0 30px;
 }
-.link{
-  border: #42b883 1px solid;
-  padding: 10px 20px 10px 20px;
-  margin: 10px;
-  text-decoration: none;
-}
 .lightMode{
   color: #1a1a1a !important;
   background-color:#fafafa !important;
@@ -143,8 +137,23 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 .link{
+  display: inline-block;
   border: #42b883 1px solid;
   padding: 10px 20px 10px 20px;
   margin: 10px;
   text-decoration: none;
+}
+.icon {
+  display: inline-block;
+    border-radius: 100%;
+    text-decoration: none;
+    font-size: 2rem;
+    outline-offset: 5px;
+    transition: all .3s ease-out;
+    margin: 10px;
+}
+.list{
+  list-style: none;
+    display: flex;
+    gap: 20px
 }

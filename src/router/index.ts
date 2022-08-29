@@ -19,14 +19,6 @@ const routes: Array<RouteRecordRaw>=[
             layout: demo
         }
     },
-    {
-        path: '/documentation',
-        name: 'documentation',
-        component:()=>import('../views/Documentation.vue'),
-        meta:{
-            layout:  documentation
-        }
-    }
 ]
 const router = createRouter({
     history: createWebHistory(),
