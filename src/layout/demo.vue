@@ -5,7 +5,6 @@ import HelloWorld from "./components/HelloWorld.vue";
 import CommandPalette from "command-palette-vue3";
 import "command-palette-vue3/dist/style.css";
 import { ref, computed, onMounted } from "vue";
-import Header from "../components/header.vue";
 defineProps<{ msg: string }>();
 const count = ref(0);
 // Optional can disable display by group by adding return false to the isDisplayByGroup
@@ -88,8 +87,18 @@ onMounted(() => {
 });
 </script>
 
-<template id="test">
-  <Header></Header>
+<template>
+    <header class="header">
+    <a href="/">
+      <img alt="logo" />
+    </a>
+    <p>
+      <router-link class="link" style="margin-left: 700px" to="/documentation"
+        >Document</router-link
+      >
+      <router-link class="link" to="/demo">Demo</router-link>
+    </p>
+  </header>
   <main>
     <div v-bind:class="themeMode.light ? 'lightMode' : ''">
       <h1 style="margin-bottom: 200px">
@@ -105,9 +114,9 @@ onMounted(() => {
     <section class="demo-section">
       <div class="demo-text">
         <h3>Control application state</h3>
-        <p>You can increase the <b>Count</b> by <b>One</b><br /></p>
-        <p>Using the button on the bottom right.<br /></p>
-        <p>
+        <p class="p-text">You can increase the <b>Count</b> by <b>One</b><br /></p>
+        <p class="p-text">Using the button on the bottom right.<br /></p>
+        <p class="p-text">
           We also have the the Command Palette function and keyboard shortcut.
         </p>
       </div>
@@ -117,7 +126,7 @@ onMounted(() => {
           <button @click="count++">Plus One</button>
           <button @click="count--">Minus One</button>
         </div>
-        <p class="descr">
+        <p class="descr p-text">
           Try Press <kbd class="keyboard">Ctrl</kbd>
           <kbd class="keyboard">K</kbd>
         </p>
@@ -126,11 +135,11 @@ onMounted(() => {
     <section class="demo-section">
       <div class="demo-text">
         <h3>Enable Conditional actions</h3>
-        <p>You toggle the 1st <b>button</b> to <b>Switch Theme</b>,<br /></p>
-        <p>
+        <p class="p-text">You toggle the 1st <b>button</b> to <b>Switch Theme</b>,<br /></p>
+        <p class="p-text">
           and the 2nd <b>button</b> to enable/disable <b>Group Search</b><br />
         </p>
-        <p>
+        <p class="p-text">
           We also have the the Command Palette function and keyboard shortcut.
         </p>
       </div>
@@ -149,7 +158,7 @@ onMounted(() => {
           />
           <strong>Result Display in Groups</strong>
         </label>
-        <p class="descr">
+        <p class="descr p-text">
           Try Press <kbd class="keyboard">Ctrl</kbd>
           <kbd class="keyboard">D</kbd>
         </p>
@@ -158,8 +167,8 @@ onMounted(() => {
     <section class="demo-section">
       <div class="demo-text">
         <h3>Change Theme</h3>
-        <p>You toggle the 1st <b>button</b> to <b>Switch Theme</b>.<br /></p>
-        <p>
+        <p class="p-text">You toggle the 1st <b>button</b> to <b>Switch Theme</b>.<br /></p>
+        <p class="p-text">
           We also have the the Command Palette function and keyboard shortcut.
         </p>
       </div>
@@ -173,7 +182,7 @@ onMounted(() => {
             <span class="slider round"></span>
           </label>
         </div>
-        <p class="descr">
+        <p class="descr p-text">
           Try Press <kbd class="keyboard">Ctrl</kbd>
           <kbd class="keyboard">M</kbd>
         </p>
@@ -243,7 +252,7 @@ onMounted(() => {
   font-weight: 700;
   font-size: 24px;
 }
-p {
+.p-text {
   display: block;
   margin-block-start: 1em;
   margin-block-end: 1em;

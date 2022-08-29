@@ -16,13 +16,6 @@
 
 
 
-.body {
-  margin: 0;
-  display: block;
-  place-items: center;
-  min-width: 320px;
-}
-
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -148,4 +141,10 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+.link{
+  border: #42b883 1px solid;
+  padding: 10px 20px 10px 20px;
+  margin: 10px;
+  text-decoration: none;
 }

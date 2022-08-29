@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Header from "../components/header.vue";
 import HelloWorld from "./components/HelloWorld.vue";
 import CommandPalette from "command-palette-vue3";
 import "command-palette-vue3/dist/style.css";
@@ -107,7 +106,15 @@ onMounted(()=>{
 </script>
 <template>
   <div style="height:100vh;display: flex;flex-direction: column;">
-    <Header></Header>
+    <header class="header">
+    <a href="/">
+        <img alt="logo"/>
+    </a>
+    <p>
+      <router-link class="link" style="margin-left: 700px" to="/documentation">Document</router-link>
+      <router-link class="link" to="/demo">Demo</router-link>
+    </p>
+  </header>
   <div v-bind:class="themeMode.light ? 'lightMode' : ''">
     <CommandPalette
       class="cmp"
@@ -118,7 +125,7 @@ onMounted(()=>{
   </div>
   <main>
     <section class="main-section">
-      <main class="sologan" style="display:block">
+      <main class="sologan" style="display:flex">
         <h3><span>Make Your Web Application Faster Using </span> <br>
        <span> Command Palette</span></h3>
       </main>
