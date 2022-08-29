@@ -1,3 +1,3 @@
 <template>
-    Add
+    Demo
 </template>

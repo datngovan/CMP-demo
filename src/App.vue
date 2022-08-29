@@ -2,10 +2,11 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import HelloWorld from './components/HelloWorld.vue';
-
+import header from './components/Header.vue';
 import CommandPalette from 'command-palette-vue3';
 import "command-palette-vue3/dist/style.css";
 import {ref, computed} from "vue";
+import router from './router';
 defineProps<{ msg: string; }>()
 const count = ref(0)
 // Optional can disable display by group by adding return false to the isDisplayByGroup
@@ -55,6 +56,9 @@ const count = ref(0)
       commandAction:() => {plusOne();}},
       {commandName:"Count Minus 1", 
       commandKey:"Control+Shift+v", 
+      commandAction:() => {minusOne();}},
+      {commandName:"Count Minus 1", 
+      commandKey:"Control+I", 
       commandAction:() => {minusOne();}},
       ]},
   ];

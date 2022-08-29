@@ -1,6 +1,7 @@
 import { createWebHashHistory,createRouter,RouteRecordRaw, createWebHistory } from "vue-router";
 import main from "../layout/main.vue";
-import blank from "../layout/blank.vue";
+import demo from "../layout/demo.vue";
+import documentation from "../layout/documentation.vue";
 const routes: Array<RouteRecordRaw>=[
     {
         path: '/',
@@ -11,11 +12,19 @@ const routes: Array<RouteRecordRaw>=[
         }
     },
     {
-        path: '/add',
-        name: 'add',
-        component:()=>import('../views/add.vue'),
+        path: '/demo',
+        name: 'demo',
+        component:()=>import('../views/Demo.vue'),
         meta:{
-            layout: blank
+            layout: demo
+        }
+    },
+    {
+        path: '/documentation',
+        name: 'documentation',
+        component:()=>import('../views/Documentation.vue'),
+        meta:{
+            layout:  documentation
         }
     }
 ]
