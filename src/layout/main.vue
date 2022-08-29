@@ -94,7 +94,7 @@ onMounted(()=>{
     <a href="/">
         <img alt="logo"/>
     </a>
-    <p style="padding-left: 900px;">
+    <p style="padding-left: 800px;">
       <router-link class="link" to="/demo">Demo</router-link>
       <a href="https://www.npmjs.com/package/command-palette-vue3" id="documentation-link" target="_blank" rel="noopener noreferrer" class="link">Documentation</a>
     </p>
