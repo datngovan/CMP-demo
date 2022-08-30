@@ -99,8 +99,8 @@ onMounted(() => {
     <div style="display: inline-block">
       <header class="header">
         <div style="text-align: left">
-          <a href="/" style="display: inline-block;">
-            <img alt="logo" />
+          <a href="/" style="display: inline-block; text-decoration: bold;color: #42b883; font-size: 40px; font-family: 'Courier New', Courier, monospace;">
+            F4Team
           </a>
         </div>
         <div style="display: flex; text-align: right; margin-left: auto;">
@@ -120,6 +120,7 @@ onMounted(() => {
               <a
                 href="https://github.com/nntai/vue-command-palette"
                 class="icon"
+                target="_blank"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="40"
@@ -135,6 +136,7 @@ onMounted(() => {
               <a
                 href="https://github.com/nntai/vue-command-palette"
                 class="icon"
+                target="_blank"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="40"
@@ -170,21 +172,21 @@ onMounted(() => {
           <div class="gwraper">
             <figure>
               <img
-                src="https://solid-command-palette.vercel.app/images/command-palette-examples/tailwind.png"
+                src="../assets/demo1.PNG"
                 alt="demo1"
               />
             </figure>
             <figcaption><span>Figure 1: Test 1</span></figcaption>
             <figure>
               <img
-                src="https://solid-command-palette.vercel.app/images/command-palette-examples/tailwind.png"
+                src="../assets/demo1.PNG"
                 alt="demo1"
               />
             </figure>
             <figcaption><span>Figure 1: Test 1</span></figcaption>
             <figure>
               <img
-                src="https://solid-command-palette.vercel.app/images/command-palette-examples/tailwind.png"
+                src="../assets/demo1.PNG"
                 alt="demo1"
               />
             </figure>

@@ -4,6 +4,7 @@
 import CommandPalette from "command-palette-vue3";
 import "command-palette-vue3/dist/style.css";
 import { ref, computed, onMounted } from "vue";
+import router from "../router";
 defineProps<{ msg: string }>();
 const count = ref(0);
 // Optional can disable display by group by adding return false to the isDisplayByGroup
@@ -53,18 +54,42 @@ const customerGroups = computed(() => {
             element.checked = !element.checked;
           },
         },
+      ],
+    },
+    {
+      groupName: "Demo",
+      commands: [
         {
           commandName: "Count Plus 1",
-          commandKey: "Control+n",
+          commandKey: "v+n",
           commandAction: () => {
             plusOne();
           },
         },
         {
           commandName: "Count Minus 1",
-          commandKey: "Control+v",
+          commandKey: "v+m",
           commandAction: () => {
             minusOne();
+          },
+        },
+      ],
+    },
+    {
+      groupName: "Moving",
+      commands: [
+      {
+          commandName: "Go to Documentation",
+          commandKey: "Control+Y",
+          commandAction: () => {
+            document.getElementById("documentation-link")?.click();
+          },
+        },
+        {
+          commandName: "Go to Front Page",
+          commandKey: "Control+Shift+Y",
+          commandAction: () => {
+            router.push("/");
           },
         },
       ],
@@ -86,19 +111,20 @@ onMounted(() => {
     <div>
       <header class="header">
         <div style="text-align: left">
-          <a href="/">
-            <img alt="logo" />
+          <a href="/" style="display: inline-block; text-decoration: bold;color: #42b883; font-size: 40px; font-family: 'Courier New', Courier, monospace;">
+            F4Team
           </a>
         </div>
         <div style="display: flex; text-align: right; margin-left: auto">
           <p>
             <router-link class="link" to="/demo">Demo</router-link>
-            <a
+            <a 
               href="https://www.npmjs.com/package/command-palette-vue3"
               id="documentation-link"
               target="_blank"
               rel="noopener noreferrer"
               class="link"
+              style="text-decoration: none;"
               >Documentation</a
             >
           </p>
@@ -107,6 +133,7 @@ onMounted(() => {
               <a
                 href="https://github.com/nntai/vue-command-palette"
                 class="icon"
+                target="_blank"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="40"
@@ -122,6 +149,7 @@ onMounted(() => {
               <a
                 href="https://github.com/nntai/vue-command-palette"
                 class="icon"
+                target="_blank"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="40"
@@ -139,8 +167,9 @@ onMounted(() => {
     </div>
     <main>
       <div v-bind:class="themeMode.light ? 'lightMode' : ''">
-        <h1 style="margin-bottom: 200px">
-          Activate the Command Palette using Ctrl + K
+        <h1 style="margin-bottom: 200px; text-align: center;">
+          Activate the Command Palette using <br>
+          <kbd class="keyboard-big">Ctrl</kbd>&nbsp;<kbd class="keyboard-big">K</kbd>
         </h1>
         <CommandPalette
           class="cmp"
@@ -167,9 +196,9 @@ onMounted(() => {
             <button @click="count--">Minus One</button>
           </div>
           <p class="descr p-text">
-            Try Press <kbd class="keyboard">Ctrl</kbd>
-            <kbd class="keyboard">N</kbd> / <kbd class="keyboard">Ctrl</kbd>
-            <kbd class="keyboard">V</kbd>
+            Try Press <kbd class="keyboard">V</kbd>
+            <kbd class="keyboard">N</kbd> / <kbd class="keyboard">V</kbd>
+            <kbd class="keyboard">M</kbd>
           </p>
         </div>
       </section>
@@ -271,7 +300,7 @@ onMounted(() => {
   align-items: center;
   gap: 20px;
   min-height: 250px;
-  width: 350px;
+  width: 365px;
   border: 1px solid #42b883;
   border-radius: 10px;
   padding-block: 30px;
@@ -287,11 +316,25 @@ onMounted(() => {
   color: #1e293b;
   border: 1px solid #cbd5e1;
   border-radius: 5px;
-  font-family: var(--scp-kbd-font-family, sans-serif);
+  font-family: 'Courier New', Courier, monospace;
   font-size: inherit;
   text-transform: capitalize;
   padding: 5px 8px;
   font-size: 12px;
+  gap: 5px;
+  font-weight: bold;
+  margin:1px;
+}
+.keyboard-big {
+  background-color: #f1f5f9;
+  color: #1e293b;
+  border: 1px solid #cbd5e1;
+  border-radius: 5px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: inherit;
+  text-transform: capitalize;
+  padding: 5px 8px;
+  font-size: 100%;
   gap: 5px;
 }
 
