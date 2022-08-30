@@ -184,13 +184,6 @@ onMounted(() => {
               />
             </figure>
             <figcaption><span>Figure 1: Test 1</span></figcaption>
-            <figure>
-              <img
-                src="../assets/demo1.PNG"
-                alt="demo1"
-              />
-            </figure>
-            <figcaption><span>Figure 1: Test 1</span></figcaption>
           </div>
         </aside>
       </section>
