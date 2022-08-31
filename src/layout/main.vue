@@ -172,11 +172,39 @@ onMounted(() => {
           <div class="gwraper">
             <figure>
               <img
-                src="../pics/pic1.png"
+                src="../pics/default.png"
                 alt="demo"
               />
             </figure>
-            <figcaption><span>Figure 1: Test 1</span></figcaption>
+            <figcaption><span>Figure 1: Default searching</span></figcaption>
+            <figure>
+              <img
+                src="../pics/default-none-group.png"
+                alt="demo"
+              />
+            </figure>
+            <figcaption><span>Figure 2: Default searching with no nested group</span></figcaption>
+            <figure>
+              <img
+                src="../pics/whitetheme.png"
+                alt="demo"
+              />
+            </figure>
+            <figcaption><span>Figure 3: White theme with the function included in package</span></figcaption>
+            <figure>
+              <img
+                src="../pics/fuzzysearch.png"
+                alt="demo"
+              />
+            </figure>
+            <figcaption><span>Figure 4: Fuzzy search</span></figcaption>
+            <figure>
+              <img
+                src="../pics/applied-to-holistics.png"
+                alt="demo"
+              />
+            </figure>
+            <figcaption><span>Figure 5: Applied to Holistics Application</span></figcaption>
           </div>
         </aside>
       </section>
