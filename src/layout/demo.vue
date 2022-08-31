@@ -11,6 +11,7 @@ const count = ref(0);
 const isDisplayByGroup = computed(() => {
   return true;
 });
+const isDisplayByGroupRef = ref(true);
 // Optional delete if donot want to using default light and dark theme
 const themeMode = ref({
   dark: true,
@@ -37,7 +38,15 @@ const plusOne = () => {
 const minusOne = () => {
   return count.value--;
 };
-const groupDisplayed = () => {};
+const groupDisplayed = (bValue: boolean) => {
+  isDisplayByGroupRef.value = bValue;
+  console.log("test1", isDisplayByGroupRef);
+};
+const groupDisplayedSync =()=>{
+  isDisplayByGroupRef.value = ! isDisplayByGroupRef.value;
+  (document.getElementsByClassName("select-display-style")[0] as HTMLInputElement).value = isDisplayByGroupRef.value.toString();
+  console.log("test2", isDisplayByGroupRef);
+}
 const customerGroups = computed(() => {
   return [
     {
@@ -71,6 +80,13 @@ const customerGroups = computed(() => {
           commandKey: "v+m",
           commandAction: () => {
             minusOne();
+          },
+        },
+        {
+          commandName: "Enable/Disable Display By Group",
+          commandKey: "v+u",
+          commandAction: () => {
+            groupDisplayedSync();
           },
         },
       ],
@@ -175,7 +191,7 @@ onMounted(() => {
           class="cmp"
           :themeMode="themeMode"
           :customerGroups="customerGroups"
-          :isDisplayByGroup="isDisplayByGroup"
+          :isDisplayByGroup="isDisplayByGroupRef"
         />
       </div>
       <section class="demo-section">
@@ -264,6 +280,10 @@ onMounted(() => {
             />
             <strong>Result Display in Groups</strong>
           </label>
+          <select name="Display Style" id="" v-on:change="(event: Event)=>{groupDisplayed((event.target as HTMLInputElement)?.value==='true')}" class="select-display-style">
+            <option value='true'>With groups</option>
+            <option value='false'>No groups</option>  
+          </select>
           <p class="descr p-text">
             Try Press <kbd class="keyboard">Ctrl</kbd>
             <kbd class="keyboard">D</kbd>
@@ -370,5 +390,16 @@ onMounted(() => {
   white-space: nowrap !important;
   word-wrap: normal !important;
   border: 0 !important;
+}
+.select-display-style{
+  appearance: none;
+    font-size: 1rem;
+    min-width: 150px;
+    padding-block: 5px;
+    padding-inline-start: 20px;
+    padding-inline-end: 10px;
+    border-radius: 20px;
+    background: #42b883;
+    color: white;
 }
 </style>

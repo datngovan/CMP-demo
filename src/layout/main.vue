@@ -263,4 +263,14 @@ figure {
 figcaption {
   text-align: center;
 }
+
+/*Holistics Theme*/
+/*App.vue Style*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+}
 </style>
