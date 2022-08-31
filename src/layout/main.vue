@@ -172,7 +172,7 @@ onMounted(() => {
           <div class="gwraper">
             <figure>
               <img
-                src="https://i.pinimg.com/564x/ed/94/82/ed94821945716ac100886d4ad9090935.jpg"
+                src="../pics/pic1.png"
                 alt="demo"
               />
             </figure>
