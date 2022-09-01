@@ -274,7 +274,7 @@ onMounted(() => {
             <option value='false'>No groups</option>  
           </select>
           <p class="descr p-text">
-            Try Press <kbd class="keyboard">Ctrl</kbd>
+            Try Press <kbd class="keyboard">V</kbd>
             <kbd class="keyboard">D</kbd>
           </p>
         </div>
