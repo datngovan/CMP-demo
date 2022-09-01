@@ -192,7 +192,7 @@ onMounted(() => {
           <p class="p-text">
             You can increase the <b>Count</b> by <b>One</b><br />
           </p>
-          <p class="p-text">Using the button on the bottom right.<br /></p>
+          <p class="p-text">Using the 2 button on the bottom.<br /></p>
           <p class="p-text">
             We also have the the Command Palette function and keyboard shortcut.
           </p>
@@ -214,7 +214,7 @@ onMounted(() => {
         <div class="demo-text">
           <h3>Change Theme</h3>
           <p class="p-text">
-            You toggle the 1st <b>button</b> to <b>Switch Theme</b>.<br />
+            You toggle the <b>button</b> to <b>Switch Theme</b>.<br />
           </p>
           <p class="p-text">
             We also have the the Command Palette function and keyboard shortcut.
@@ -248,10 +248,7 @@ onMounted(() => {
         <div class="demo-text">
           <h3>Enable Conditional actions</h3>
           <p class="p-text">
-            You toggle the 1st <b>button</b> to <b>Switch Theme</b>,<br />
-          </p>
-          <p class="p-text">
-            and the 2nd <b>button</b> to enable/disable <b>Group Search</b
+            Select a display style from the List to enable/disable <b>Group Search</b
             ><br />
           </p>
           <p class="p-text">
