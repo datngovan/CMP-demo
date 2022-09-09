@@ -45,7 +45,6 @@ const groupDisplayed = (bValue: boolean) => {
 const groupDisplayedSync =()=>{
   isDisplayByGroupRef.value = ! isDisplayByGroupRef.value;
   (document.getElementsByClassName("select-display-style")[0] as HTMLInputElement).value = isDisplayByGroupRef.value.toString();
-  console.log("test2", isDisplayByGroupRef);
 }
 const customerGroups = computed(() => {
   return [
@@ -84,7 +83,7 @@ const customerGroups = computed(() => {
         },
         {
           commandName: "Enable/Disable Display By Group",
-          commandKey: "v+u",
+          commandKey: "v+d",
           commandAction: () => {
             groupDisplayedSync();
           },
