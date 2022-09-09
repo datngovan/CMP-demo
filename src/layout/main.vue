@@ -70,6 +70,7 @@ const customerGroups = computed(() => {
           commandName: "Go to Demo",
           commandKey: "Control+U",
           commandAction: () => {
+            router.go(1);
             router.push("/demo");
           },
         },
@@ -91,6 +92,11 @@ onMounted(() => {
     themeMode.value.light = true;
     document.getElementById("body")?.classList.add("lightMode");
     document.getElementById("body")?.classList.remove("darkMode");
+  } else {
+    themeMode.value.dark = true;
+    themeMode.value.light = false;
+    document.getElementById("body")?.classList.add("darkMode");
+    document.getElementById("body")?.classList.remove("lightMode");
   }
 });
 </script>

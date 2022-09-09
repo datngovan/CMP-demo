@@ -31,6 +31,14 @@ const changeTheme = () => {
     document.getElementById("body")?.classList.add("lightMode");
     document.getElementById("body")?.classList.remove("darkMode");
   }
+  saveTheme();
+};
+const saveTheme = () => {
+  if (themeMode.value.dark === true) {
+    window.sessionStorage.setItem("darkMode", "true");
+  } else {
+    window.sessionStorage.setItem("darkMode", "false");
+  }
 };
 const plusOne = () => {
   return count.value++;
@@ -104,6 +112,7 @@ const customerGroups = computed(() => {
           commandName: "Go to Front Page",
           commandKey: "Control+Shift+Y",
           commandAction: () => {
+            router.go(1);
             router.push("/");
           },
         },
@@ -124,6 +133,11 @@ onMounted(() => {
     themeMode.value.light = true;
     document.getElementById("body")?.classList.add("lightMode");
     document.getElementById("body")?.classList.remove("darkMode");
+  } else {
+    themeMode.value.dark = true;
+    themeMode.value.light = false;
+    document.getElementById("body")?.classList.add("darkMode");
+    document.getElementById("body")?.classList.remove("lightMode");
   }
 });
 </script>
